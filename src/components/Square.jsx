@@ -1,6 +1,6 @@
 import React from "react";
 
-function Square(value) {
-  return <button type="button">{value}</button>;
+function Square({ value, children }) {
+  return <button type="button">{children}</button>;
 }
 export default Square;

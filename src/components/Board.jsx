@@ -6,7 +6,9 @@ function Board() {
     <div>
       <div>
         <Square value={0} />
-        <Square value={1} />
+        <Square value={1}>
+          <p>Value is One of button.</p>
+        </Square>
         <Square value={2} />
       </div>
       <div>
