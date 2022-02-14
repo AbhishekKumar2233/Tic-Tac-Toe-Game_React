@@ -1,11 +1,21 @@
-import React from "react";
+import React, { useState } from "react";
 import Square from "./Square";
 
 function Board() {
+  const [value, setvalue] = useState();
+
+  function handle() {
+    if (value === 0) {
+      setvalue(1);
+    } else {
+      setvalue(0);
+    }
+  }
+
   return (
     <div className="board">
       <div className="board-row">
-        <Square value={0} />
+        <Square value={value} onClick={handle} />
         <Square value={1} />
         <Square value={2} />
       </div>
