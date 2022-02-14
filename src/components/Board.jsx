@@ -6,6 +6,9 @@ function Board() {
   const [isXNext, setIsXNext] = useState(false);
 
   function handleBoard(position) {
+    if (board[position]) {
+      return;
+    }
     setBoard((prev) => {
       return prev.map((square, pos) => {
         if (pos === position) {
