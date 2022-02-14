@@ -47,7 +47,8 @@ export default function App() {
       <h1>Tic Tac Toe Game</h1>
       <h2>{winnerName}</h2>
       <Board board={current.board} handleBoard={handleBoard} />
-      <History history={history} moveTo={moveTo} />
+      {/* <button onClick={Restart}>Restart</button> */}
+      <History history={history} moveTo={moveTo} currentMove={currentMove} />
     </div>
   );
 }
