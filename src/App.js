@@ -7,10 +7,12 @@ export default function App() {
   const [board, setBoard] = useState(Array(9).fill(null));
   const [isXNext, setIsXNext] = useState(false);
 
-  //winner
+  //winner logic
   const winner = calculateWinner(board);
   console.log(winner);
-  const winnerName = winner;
+  const winnerName = winner
+    ? `Winner is ${winner}`
+    : `Next Player is ${isXNext ? "X" : "O"}`;
 
   function handleBoard(position) {
     if (board[position]) {
@@ -31,7 +33,7 @@ export default function App() {
   return (
     <div className="app">
       <h1>Tic Tac Toe Game</h1>
-      <h2>Winner is {winnerName}</h2>
+      <h2>{winnerName}</h2>
       <Board board={board} handleBoard={handleBoard} />
     </div>
   );
