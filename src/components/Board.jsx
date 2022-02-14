@@ -2,32 +2,25 @@ import React, { useState } from "react";
 import Square from "./Square";
 
 function Board() {
-  const [value, setvalue] = useState();
-
-  function handle() {
-    if (value === 0) {
-      setvalue(1);
-    } else {
-      setvalue(0);
-    }
-  }
+  const [board, setBoard] = useState(Array(9).fill(null));
+  console.log(board);
 
   return (
     <div className="board">
       <div className="board-row">
-        <Square value={value} onClick={handle} />
-        <Square value={1} />
-        <Square value={2} />
+        <Square value={board[0]} />
+        <Square value={board[1]} />
+        <Square value={board[2]} />
       </div>
       <div className="board-row">
-        <Square value={3} />
-        <Square value={4} />
-        <Square value={5} />
+        <Square value={board[3]} />
+        <Square value={board[4]} />
+        <Square value={board[5]} />
       </div>
       <div className="board-row">
-        <Square value={6} />
-        <Square value={7} />
-        <Square value={8} />
+        <Square value={board[6]} />
+        <Square value={board[7]} />
+        <Square value={board[8]} />
       </div>
     </div>
   );
