@@ -5,8 +5,16 @@ function Board() {
   const [board, setBoard] = useState(Array(9).fill(null));
   console.log(board);
 
-  function handleBoard() {
-    console.log("hYY");
+  function handleBoard(position) {
+    setBoard((prev) => {
+      return prev.map((square, pos) => {
+        if (pos === position) {
+          return "X";
+        } else {
+          return square;
+        }
+      });
+    });
   }
 
   const renderSquare = (position) => {
@@ -30,12 +38,12 @@ function Board() {
       <div className="board-row">
         {renderSquare(3)}
         {renderSquare(4)}
-        {renderSquare(6)}
+        {renderSquare(5)}
       </div>
       <div className="board-row">
+        {renderSquare(6)}
         {renderSquare(7)}
         {renderSquare(8)}
-        {renderSquare(9)}
       </div>
     </div>
   );
