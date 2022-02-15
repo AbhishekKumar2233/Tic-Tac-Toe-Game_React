@@ -127,3 +127,34 @@ button {
   }
 }
 
+.bg-balls{
+  position:fixed;
+  top:0;
+  left:0;
+  right:0;
+  bottom: 0;
+  min-width: 100%;
+  z-index:-1;
+
+  &:before,
+  &:after{
+    content: '';
+    position: absolute;
+    width: 150px;
+    height: 15px;
+    border-radius: 50%;
+  }
+  &:before{
+    background-color: $orange;
+    right: -75px;
+    bottom: -75px;
+    @media screen and (min-width:476px) {
+      width:220px;
+      height: 220px;
+      right:-110px;
+      bottom: -110px;
+      
+    }
+  }
+  
+}
