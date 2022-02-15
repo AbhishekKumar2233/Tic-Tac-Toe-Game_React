@@ -35,6 +35,21 @@ button {
   color: $orange;
 }
 
+.reset-btn{
+  margin-top: 28px;
+  padding: 5px 20px;
+  border:2px solid $orange;
+  border-radius: 5px;
+  font-weight: bold;
+  color: #ffffff;
+  &:hover{
+    background-color: crimson;
+    color: #ffffff;
+    font-weight: border;
+    border: 2px solid crimson;
+  }
+}
+
 .history-wrapper{
   width:300px;
   text-align: center;
@@ -153,7 +168,17 @@ button {
       height: 220px;
       right:-110px;
       bottom: -110px;
-      
+    }
+  }
+  &:after{
+    background-color: $green;
+    right: -75px;
+    bottom: -75px;
+    @media screen and (min-width:476px) {
+      width:220px;
+      height: 220px;
+      left:-110px;
+      top: -110px;
     }
   }
   

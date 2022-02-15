@@ -60,8 +60,10 @@ export default function App() {
         handleBoard={handleBoard}
         winningSquares={winningSquares}
       />
-      <button onClick={Restart}>Restart</button>
-
+      <button className="reset-btn" onClick={Restart}>
+        Restart
+      </button>
+      <h2 style={{ fontWeight: "normal" }}>Current Game History</h2>
       <History history={history} moveTo={moveTo} currentMove={currentMove} />
       <div className="bg-balls" />
     </div>
