@@ -14,7 +14,7 @@ export default function App() {
   const current = history[currentMove];
 
   //winner logic
-  const winner = calculateWinner(current.board);
+  const { winner, winningSquares } = calculateWinner(current.board);
   console.log(winner);
   // const winnerName = winner
   //   ? `Winner is ${winner}`
@@ -53,7 +53,11 @@ export default function App() {
     <div className="app">
       <h1>Tic Tac Toe Game</h1>
       <StatusMessage winner={winner} current={current} />
-      <Board board={current.board} handleBoard={handleBoard} />
+      <Board
+        board={current.board}
+        handleBoard={handleBoard}
+        winningSquares={winningSquares}
+      />
       <button onClick={Restart}>Restart</button>
 
       <History history={history} moveTo={moveTo} currentMove={currentMove} />
