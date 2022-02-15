@@ -2,6 +2,7 @@ import "./styles.scss";
 import React, { useState } from "react";
 import Board from "./components/Board";
 import History from "./components/History";
+import StatusMessage from "./components/StatusMessage";
 import { calculateWinner } from "./components/helper";
 
 export default function App() {
@@ -10,15 +11,14 @@ export default function App() {
   ]);
 
   const [currentMove, setCurrentMove] = useState(0);
-
   const current = history[currentMove];
 
   //winner logic
   const winner = calculateWinner(current.board);
   console.log(winner);
-  const winnerName = winner
-    ? `Winner is ${winner}`
-    : `Next Player is ${current.isXNext ? "X" : "O"}`;
+  // const winnerName = winner
+  //   ? `Winner is ${winner}`
+  //   : `Next Player is ${current.isXNext ? "X" : "O"}`;
 
   function handleBoard(position) {
     if (current.board[position] || winner) {
@@ -45,9 +45,10 @@ export default function App() {
   return (
     <div className="app">
       <h1>Tic Tac Toe Game</h1>
-      <h2>{winnerName}</h2>
+      <StatusMessage winner={winner} current={current} />
       <Board board={current.board} handleBoard={handleBoard} />
       {/* <button onClick={Restart}>Restart</button> */}
+
       <History history={history} moveTo={moveTo} currentMove={currentMove} />
     </div>
   );
