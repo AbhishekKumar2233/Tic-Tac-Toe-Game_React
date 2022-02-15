@@ -42,12 +42,19 @@ export default function App() {
     setCurrentMove(move);
   };
 
+  const NewGame = [{ board: Array(9).fill(null), isXNext: true }];
+
+  function Restart() {
+    setHistory(NewGame);
+    setCurrentMove(0);
+  }
+
   return (
     <div className="app">
       <h1>Tic Tac Toe Game</h1>
       <StatusMessage winner={winner} current={current} />
       <Board board={current.board} handleBoard={handleBoard} />
-      {/* <button onClick={Restart}>Restart</button> */}
+      <button onClick={Restart}>Restart</button>
 
       <History history={history} moveTo={moveTo} currentMove={currentMove} />
     </div>
